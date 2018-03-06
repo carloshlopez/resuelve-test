@@ -56,7 +56,7 @@ Todos los llamados se registran en una db Postgres, esto pensando en un futuro u
 ## TODOs
 *Se puede mejorar el app creando en el modelo Scrap una forma de hacer la heurística algo en una interfaz ó en una clase qeu se deje heredar para cambiar la heurística utilizada al hacer los llamados.
 
-*Cambiar el servidor web, por ahora está WEB RICK
+*Cambiar el servidor web, por ahora está Unicorn
 
 *Se podría cancelar los loggeos a la DB para hacer que el algorítmo sea más rápido.
 
