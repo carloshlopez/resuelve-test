@@ -66,6 +66,8 @@ Todos los llamados se registran en una db Postgres, esto pensando en un futuro u
 
 *Arreglar dependencies
 
+*Agregar inspección exaustiva a errores de los parámetros y cuando el llamado al servicio externo sea diferente de Net::HTTPSuccess
+
 ## TDD
 
 Solo se uso TDD para la creación de los Endpoints, pero tuve problemas al hacerlos exaustos. Se pueden ejecutar con:
