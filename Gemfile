@@ -8,6 +8,7 @@ gem 'pg', '~> 0.15'
 
 gem 'sidekiq'
 gem 'sinatra', require: false
+gem 'unicorn'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

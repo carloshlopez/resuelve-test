@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   end
   
 require "sidekiq/web"
+Sidekiq::Web.set :session_secret, Rails.application.secrets[:secret_key_base]
+
 Sidekiq::Web.use Rack::Auth::Basic do |username, password|
   # Protect against timing attacks:
   # - See https://codahale.com/a-lesson-in-timing-attacks/
