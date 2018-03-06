@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20180306021928) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "lookups", force: :cascade do |t|
     t.string   "external_id"
     t.date     "start"
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180306021928) do
     t.integer  "search_id"
   end
 
-  add_index "scraps", ["search_id"], name: "index_scraps_on_search_id"
+  add_index "scraps", ["search_id"], name: "index_scraps_on_search_id", using: :btree
 
   create_table "searches", force: :cascade do |t|
     t.string   "external_id"
