@@ -12,7 +12,7 @@
       <th>Results</th>
       <th>Time Spent (miliseconds)</th>
       <th>External Calls</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -27,7 +27,6 @@
         <td><%= search.time_spent %></td>
         <td><%= search.scraps.count %></td>
         <td><%= link_to 'Show', search %></td>
-        <td><%= link_to 'Edit', edit_search_path(search) %></td>
         <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
