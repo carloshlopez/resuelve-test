@@ -5,10 +5,12 @@ El app para resolver el test está expuesta como un API con 2 Endpoints
 
 Este recibe un JSON como parámetro alá Rails así:
 ```json
-"search" : {
-  "external_id" : "8672e846-9c89-4dbf-a1cc-b85a2da5abe1",
-  "start": "2017-01-01",
-  "finish": "2017-01-01" 
+{
+  "search" : {
+    "external_id" : "8672e846-9c89-4dbf-a1cc-b85a2da5abe1",
+    "start": "2017-01-01",
+    "finish": "2017-01-01" 
+  }
 }
 ```
 El retorno de este end_point es un http_status: Created 201 y json así:
