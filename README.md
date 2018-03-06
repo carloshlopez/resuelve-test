@@ -45,9 +45,9 @@ En ambos endpoints si existe un error, se devolverá un http_status Bad Request 
 ## APP de prueba
 También se creó un app de prueba que puede ser accedida por medio del root de este repositorio
 
-En donde se hace un query por una simple interfaz web (Hace todo el llamado en línea -un mismo request-). 
+En donde se hace un query por una simple interfaz web. 
 
-Estas 2 apps están live en ambiente de "producción" en: https://resuelve-test.herokuapp.com
+Estas 2 apps están live en ambiente de "producción" con deploy en heroku en: https://resuelve-test.herokuapp.com
 
 ## Detalles de implementación
 
