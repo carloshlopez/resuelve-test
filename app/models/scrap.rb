@@ -18,9 +18,9 @@ class Scrap < ActiveRecord::Base
 
         else
             total_invoices += self.result.to_i
-            new_start = self.finish
+            new_start = self.finish + 1
             new_finish = self.initial_finish
-            unless (new_start == new_finish)
+            unless (new_start >= new_finish)
                 ns = Scrap.create(start: new_start, finish: new_finish, external_id: self.external_id, initial_finish: self.initial_finish, last_start: self.start, search_id: self.search_id)
                 total_invoices += ns.do_scrap    
             end
