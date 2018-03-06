@@ -21,8 +21,13 @@
 </p>
 
 <p>
+  <strong>Time spent in miliseconds:</strong>
+  <%= @search.time_spent %>
+</p>
+
+<p>
   <strong>Detail of all queries:</strong>
-  <br/>Númber of queries to external api: <%= @search.scraps.count %>
+  <br/>Number of queries to external api: <%= @search.scraps.count %>
 </p>
 
 <table>
@@ -39,8 +44,8 @@
   <tbody>
     <% @search.scraps.each do |scrap| %>
       <tr>
-        <td><%= scrap.start.strftime("%Y / %B / %d") %></td>
-        <td><%= scrap.finish.strftime("%Y / %B / %d") %></td>
+        <td><%= scrap.start.strftime("%Y/%B/%d") %></td>
+        <td> - <%= scrap.finish.strftime("%Y/%B/%d") %></td>
         <td><%= scrap.total %></td>
         <td><%= scrap.result %></td>
       </tr>

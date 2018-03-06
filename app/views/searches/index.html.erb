@@ -9,7 +9,9 @@
       <th>External Id</th>
       <th>Start</th>
       <th>Finish</th>
-      <th>Result</th>
+      <th>Results</th>
+      <th>Time Spent (miliseconds)</th>
+      <th>External Calls</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,8 +22,10 @@
         <td><%= search.id %></td>
         <td><%= search.external_id %></td>
         <td><%= search.start.strftime("%Y/%B/%d") %></td>
-        <td><%= search.finish.strftime("%Y/%B/%d") %></td>
+        <td> <%= search.finish.strftime("%Y/%B/%d") %></td>
         <td><%= search.result %></td>
+        <td><%= search.time_spent %></td>
+        <td><%= search.scraps.count %></td>
         <td><%= link_to 'Show', search %></td>
         <td><%= link_to 'Edit', edit_search_path(search) %></td>
         <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>

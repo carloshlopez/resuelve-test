@@ -13,3 +13,7 @@ require 'rails_helper'
 RSpec.describe SearchesHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
 end
+
+RSpec.configure do |config|
+  config.before(:all) { @latest_id = 0, @result = "Working" }
+end

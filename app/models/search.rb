@@ -5,10 +5,16 @@ class Search < ActiveRecord::Base
     has_many :scraps
     
     private
+    
+        # Starts a number of scraps depending on its attributes: external_id:string, start:date, finish:date 
         def do_scrap
+            t1 = Time.now
             @scrap = Scrap.new(start: self.start, finish: self.finish, external_id: self.external_id, search_id: self.id)
             @scrap.initial_finish = @scrap.finish
             @scrap.last_start = @scrap.start
-            @scrap.do_scrap if @scrap.save
+            self.result = @scrap.do_scrap if @scrap.save
+            t2 = Time.now
+            self.time_spent = (t2 - t1).in_milliseconds
+            self.save
         end
 end

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Searches", type: :request do
+
   describe "GET /searches" do
     it "works! (now write some real specs)" do
       get searches_path
@@ -22,12 +23,12 @@ RSpec.describe "Searches", type: :request do
       get api_v1_search_path, params
       puts "Respose #{response.body}"
       expect(response).to have_http_status(:created)
-      expect(JSON.parse(response.body)["search_id"]).to eq(1)
-      expect(JSON.parse(response.body)["result"]).to eq("Working")
+      @latest_id = JSON.parse(response.body)["search_id"]
       
-      get api_v1_search_result_path(search_id: 1)
+      get api_v1_search_result_path(search_id: @latest_id)
       puts "Respose #{response.body}"
-      expect(response.body).to eq("9")
+      expect(JSON.parse(response.body)["result"]).to eq("9")
+      expect(JSON.parse(response.body)["num_external_calls"]).to eq(1)
       
     end
     
