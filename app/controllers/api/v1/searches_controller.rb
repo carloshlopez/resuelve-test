@@ -14,7 +14,6 @@ module Api
       # Starts job to do a scrap for results with external call
       # Returns search_id to to look_up later
       def do_search
-        #TODO Do this call in a worker like sidekiq
         @search = Search.new(search_params)
         if(@search.save)
           render json: {search_id: @search.id}, :status => :created

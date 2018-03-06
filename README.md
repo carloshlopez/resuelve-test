@@ -41,7 +41,7 @@ En ambos endpoints si existe un error, se devolverá un http_status Bad Request 
 ## APP de prueba
 También se creó un app de prueba que puede ser accedida por medio del root de este repositorio
 
-En donde se hace un query por una simple interfaz web. 
+En donde se hace un query por una simple interfaz web (Hace todo el llamado en línea -un mismo request-). 
 
 Estas 2 apps están live en ambiente de "producción" en: https://resuelve-test.herokuapp.com
 
@@ -50,8 +50,15 @@ Estas 2 apps están live en ambiente de "producción" en: https://resuelve-test.
 Todos los llamados se registran en una db Postgres, esto pensando en un futuro utilizarlo para crear mejores heurísticas con la recolección de los datos que se hacen en cada búsqueda. En el app web, se puede ver el detalle de todos los llamados realizados.
 
 ## TODOs
-Se puede mejorar el app creando en el modelo Scrap una forma de hacer la heurística algo en una interfaz ó en una clase qeu se deje heredar para cambiar la heurística utilizada al hacer los llamados.
+*Se puede mejorar el app creando en el modelo Scrap una forma de hacer la heurística algo en una interfaz ó en una clase qeu se deje heredar para cambiar la heurística utilizada al hacer los llamados.
 
-Cambiar el servidor web, por ahora está WEB RICK
+*Cambiar el servidor web, por ahora está WEB RICK
 
-Se podría cancelar los loggeos a la DB para hacer que el algorítmo sea más rápido.
+*Se podría cancelar los loggeos a la DB para hacer que el algorítmo sea más rápido.
+
+*Completar tests
+
+## TDD
+
+Solo se uso TDD para la creación de los Endpoints, pero tuve problemas al hacerlos exaustos. Se pueden ejecutar con:
+> rspec spec/requests/searches_spec.rb
