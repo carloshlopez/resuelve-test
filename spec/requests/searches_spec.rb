@@ -20,7 +20,7 @@ RSpec.describe "Searches", type: :request do
           }
       } 
       
-      get api_v1_search_path, params
+      post api_v1_search_path, params
       puts "Respose #{response.body}"
       expect(response).to have_http_status(:created)
       @latest_id = JSON.parse(response.body)["search_id"]

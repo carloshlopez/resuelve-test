@@ -1,6 +1,7 @@
 module Api
   module V1
     class SearchesController < InheritedResources::Base
+      skip_before_action :verify_authenticity_token
       respond_to :json
       rescue_from ActiveRecord::RecordNotFound, :with => :handle_exception
       rescue_from Exception, :with => :handle_exception

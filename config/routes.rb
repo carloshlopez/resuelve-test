@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     
     namespace :v1 do
-      get '/search' => "searches#do_search", as: :search
+      post '/search' => "searches#do_search", as: :search
       get '/search_result/:search_id' => "searches#get_result", as: :search_result
     end
   end

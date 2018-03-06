@@ -1,7 +1,7 @@
 ## Resuelve Test
 
 El app para resolver el test está expuesta como un API con 2 Endpoints
-> /api/v1/search
+> POST /api/v1/search
 
 Este recibe un JSON como parámetro alá Rails así:
 ```json
@@ -21,7 +21,7 @@ Este search_id es el que se debe utilizar para consultar el resultado de una bú
 > Esta decisión se tomó ya que el llamado puede tardar mucho y no debería hacerse en línea, sino en un worker y después consultar su respuesta
 
 El segundo end_point es: 
-> /api/v1/search_result/:search_id
+> GET /api/v1/search_result/:search_id
 
 El retorno de este end_point es in http_status: OK 200 y un json así:
 ```json
@@ -61,6 +61,8 @@ Todos los llamados se registran en una db Postgres, esto pensando en un futuro u
 *Se podría cancelar los loggeos a la DB para hacer que el algorítmo sea más rápido.
 
 *Completar tests
+
+*Arreglar dependencies
 
 ## TDD
 
