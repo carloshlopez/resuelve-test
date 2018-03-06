@@ -1,6 +1,8 @@
 class Search < ActiveRecord::Base
-    
-    after_create :async_scrap
+    validates :start, presence: true
+    validates :finish, presence: true
+    validates :external_id, presence: true
+    after_commit :async_scrap
     has_many :scraps
     
     # Starts a number of scraps depending on its attributes: external_id:string, start:date, finish:date 
