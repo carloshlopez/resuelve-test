@@ -8,7 +8,6 @@ class Scrap < ActiveRecord::Base
     def do_scrap
         total_invoices = 0
         self.result = self.external_call
-        self.save
         if self.result.index("Hay") and self.result.index("Hay") > 0
             new_start = self.start
             new_finish = self.finish
@@ -21,7 +20,7 @@ class Scrap < ActiveRecord::Base
             total_invoices += self.result.to_i
             new_start = self.finish
             new_finish = self.initial_finish
-            unless (new_start == new_finish || (new_finish == self.initial_finish && new_start == self.last_start))
+            unless (new_start == new_finish)
                 ns = Scrap.create(start: new_start, finish: new_finish, external_id: self.external_id, initial_finish: self.initial_finish, last_start: self.start, search_id: self.search_id)
                 total_invoices += ns.do_scrap    
             end
