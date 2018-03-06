@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       get '/search_result/:search_id' => "searches#get_result", as: :search_result
     end
   end
+  
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
