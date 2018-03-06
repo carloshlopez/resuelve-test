@@ -27,7 +27,10 @@ El retorno de este end_point es in http_status: OK 200 y un json así:
 ```json
 {
   "result" : "Working ó el número de facturas",
-  "num_external_calls": 3
+  "num_external_calls": 3,
+  "id" : "8672e846-9c89-4dbf-a1cc-b85a2da5abe1",
+  "start": "2017-01-01",
+  "finish": "2017-01-01" 
 }
 ```
 En ambos endpoints si existe un error, se devolverá un http_status Bad Request 400 y mensaje de error así:

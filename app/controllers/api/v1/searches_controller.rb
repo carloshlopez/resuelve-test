@@ -28,7 +28,7 @@ module Api
       # num_external_calls is an integer
       def get_result
         @search = Search.find(params[:search_id])
-        render json: {result: @search.result, num_external_calls: @search.scraps.count}
+        render json: {result: @search.result, num_external_calls: @search.scraps.count, id: @search.external_id, start: @search.start, finish: @search.finish}
       end
       
       private

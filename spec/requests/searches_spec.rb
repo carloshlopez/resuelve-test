@@ -29,7 +29,9 @@ RSpec.describe "Searches", type: :request do
       puts "Respose #{response.body}"
       expect(JSON.parse(response.body)["result"]).to eq("Working")
       expect(JSON.parse(response.body)["num_external_calls"]).to eq(0)
-      
+      expect(JSON.parse(response.body)["id"]).to eq("8672e846-9c89-4dbf-a1cc-b85a2da5abe1")
+      expect(JSON.parse(response.body)["start"]).to eq("2017-01-01")
+      expect(JSON.parse(response.body)["finish"]).to eq("2017-01-01")
     end
     
   end
