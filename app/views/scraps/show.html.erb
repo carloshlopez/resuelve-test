@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @scrap.start %>
+</p>
+
+<p>
+  <strong>Finish:</strong>
+  <%= @scrap.finish %>
+</p>
+
+<p>
+  <strong>External:</strong>
+  <%= @scrap.external_id %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @scrap.result %>
+</p>
+
+<%= link_to 'Edit', edit_scrap_path(@scrap) %> |
+<%= link_to 'Back', scraps_path %>

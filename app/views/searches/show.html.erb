@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>External:</strong>
+  <%= @search.external_id %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @search.start %>
+</p>
+
+<p>
+  <strong>Finish:</strong>
+  <%= @search.finish %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @search.result %>
+</p>
+
+<p>
+  <strong>Detail of all queries:</strong>
+  <br/>Númber of queries to external api: <%= @search.scraps.count %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start</th>
+      <th>Finish</th>
+      <th>Total</th>
+      <th>Result</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @search.scraps.each do |scrap| %>
+      <tr>
+        <td><%= scrap.start.strftime("%Y / %B / %d") %></td>
+        <td><%= scrap.finish.strftime("%Y / %B / %d") %></td>
+        <td><%= scrap.total %></td>
+        <td><%= scrap.result %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>

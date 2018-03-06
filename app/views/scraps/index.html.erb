@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Scraps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Start</th>
+      <th>Finish</th>
+      <th>Last Start</th>
+      <th>Initial Finish</th>
+      <th>Total</th>
+      <th>Result</th>
+      <th>Search Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scraps.each do |scrap| %>
+      <tr>
+        <td><%= scrap.external_id %></td>
+        <td><%= scrap.start.strftime("%Y / %B / %d") %></td>
+        <td><%= scrap.finish.strftime("%Y / %B / %d") %></td>
+        <td><%= scrap.last_start.strftime("%Y / %B / %d") %></td>
+        <td><%= scrap.initial_finish.strftime("%Y / %B / %d") %></td>
+        <td><%= scrap.total %></td>
+        <td><%= scrap.result %></td>
+        <td><%= scrap.search_id %></td>
+        <td><%= link_to 'Show', scrap %></td>
+        <td><%= link_to 'Edit', edit_scrap_path(scrap) %></td>
+        <td><%= link_to 'Destroy', scrap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scrap', new_scrap_path %>

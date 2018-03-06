@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2018-03-02
+  finis: 2018-03-02
+  external_id: MyString
+
+two:
+  start: 2018-03-02
+  finis: 2018-03-02
+  external_id: MyString
